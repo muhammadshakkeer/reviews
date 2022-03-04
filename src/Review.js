@@ -4,19 +4,21 @@ import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
 const Review = () => {
   const [index,setIndex] = useState(0)
-  //below :-  [] not () beacuse -> {people is an array}
+  //below :- people [] ,not () beacuse -> {people is an array}
   const {id,name,job,image,text} = People[index]
   
   // func :- if index going benyond the 3d index (index = 3 length = 4) it will be 0 or 
   // func :- if index going to lessthan (> 0 ) it will be 3
   // so that here is checking number 
+  // console.log('length :- ', People.length - 1)
   const checkNumber =(number)=> {
     // people.length = index position 
     // people.length - 1 = 3d index (logic in here) (index = 3)
-    if(number >= People.length ){
+    if(number > People.length - 1 ){
         return 0;
     }
     if(number < 0 ){
+      // if (number < 0 ) setIndex( 3 )
       return People.length - 1
     }
     return number
@@ -31,7 +33,7 @@ const Review = () => {
   // prev function
   const prevPerson =() => {
     setIndex((index)=> {
-        const newIndex = index -1 
+        const newIndex = index - 1 
         
         return checkNumber(newIndex)
     })
