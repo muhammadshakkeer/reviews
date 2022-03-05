@@ -1,46 +1,46 @@
 import React, { useState } from 'react';
-import People from './data';
+import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
 const Review = () => {
   const [index,setIndex] = useState(0)
   //below :- people [] ,not () beacuse -> {people is an array}
-  const {id,name,job,image,text} = People[index]
+  const {id,name,job,image,text} = people[index]
   
   // func :- if index going benyond the 3d index (index = 3 length = 4) it will be 0 or 
   // func :- if index going to lessthan (> 0 ) it will be 3
   // so that here is checking number 
   // console.log('length :- ', People.length - 1)
-  const checkNumber =(number)=> {
+  const checkNumber = (number) => {
     // people.length = index position 
     // people.length - 1 = 3d index (logic in here) (index = 3)
-    if(number > People.length - 1 ){
+    if (number > people.length - 1 ){
         return 0;
     }
-    if(number < 0 ){
+    if (number < 0 ) {
       // if (number < 0 ) setIndex( 3 )
-      return People.length - 1
+      return people.length - 1
     }
+    console.log("Number : ",number)
     return number
   }
     // next function
-  const nextPerson =() => {
-    setIndex((index)=> {
+  const nextPerson = () => {
+    setIndex((index) => {
         const newIndex = index + 1
         return checkNumber(newIndex)
     })
   }
   // prev function
-  const prevPerson =() => {
+  const prevPerson = () => {
     setIndex((index)=> {
-        const newIndex = index - 1 
-        
+        const newIndex = index - 1    
         return checkNumber(newIndex)
     })
   }
   const randomPerson=()=>{
     // eg:- 3.43535353 -> 3
-    const randomNumber = Math.floor(Math.random() * People.length)
+    let randomNumber = Math.floor(Math.random() * people.length)
 
     // 1st METHOD
     // const togglePerson = Math.floor(randomNumber)
@@ -49,7 +49,10 @@ const Review = () => {
     // 2st METHOD
     
       if(randomNumber === index){
-        randomNumber = index +1
+        console.log('index' , index);
+        console.log(randomNumber === index);
+        randomNumber = index + 1
+        console.log("random number === index : ",randomNumber);
       }
       setIndex(checkNumber(randomNumber))
     
