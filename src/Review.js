@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import { AiFillStar } from "react-icons/ai";
 
 const Review = () => {
+  const [favIcon,setFavIcon]= useState(false)
   const [index,setIndex] = useState(0)
   //below :- people [] ,not () beacuse -> {people is an array}
   const {id,name,job,image,text} = people[index]
   
-  // func :- if index going benyond the 3d index (index = 3 length = 4) it will be 0 or 
-  // func :- if index going to lessthan (> 0 ) it will be 3
-  // so that here is checking number 
-  // console.log('length :- ', People.length - 1)
+   // func :- if index going benyond the 3d index (index = 3 length = 4) it will be 0 or 
+   // func :- if index going to lessthan (> 0 ) it will be 3
+   // so that here is checking number 
+   // console.log('length :- ', People.length - 1)
   const checkNumber = (number) => {
     // people.length = index position 
     // people.length - 1 = 3d index (logic in here) (index = 3)
@@ -24,14 +26,14 @@ const Review = () => {
     console.log("Number : ",number)
     return number
   }
-    // next function
+   // next function
   const nextPerson = () => {
     setIndex((index) => {
         const newIndex = index + 1
         return checkNumber(newIndex)
     })
   }
-  // prev function
+   // prev function
   const prevPerson = () => {
     setIndex((index)=> {
         const newIndex = index - 1    
@@ -59,6 +61,10 @@ const Review = () => {
     console.log(randomNumber);
   }
 
+  // add to favourites
+  const addFav = () => {
+    console.log("addfav");
+  }
   return <article className='review'>
         <div className="img-container">
           <img src={image} alt={name} className='person-img'/>
@@ -82,6 +88,11 @@ const Review = () => {
           suprise me
         </button>
 
+          <div className={ favIcon ? 'fav-icon' : ''} ><AiFillStar
+          style={{cursor:'pointer'}}
+            onClick={()=>setFavIcon( !favIcon)}
+          /></div>
+        
   </article>;
 };
 
