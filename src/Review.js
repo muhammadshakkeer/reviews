@@ -8,7 +8,7 @@ const Review = () => {
   const [index,setIndex] = useState(0)
   //below :- people [] ,not () beacuse -> {people is an array}
   const {id,name,job,image,text} = people[index]
-  
+    
    // func :- if index going benyond the 3d index (index = 3 length = 4) it will be 0 or 
    // func :- if index going to lessthan (> 0 ) it will be 3
    // so that here is checking number 
@@ -23,7 +23,7 @@ const Review = () => {
       // if (number < 0 ) setIndex( 3 )
       return people.length - 1
     }
-    console.log("Number : ",number)
+    // console.log("Number : ",number)
     return number
   }
    // next function
@@ -38,6 +38,7 @@ const Review = () => {
     setIndex((index)=> {
         const newIndex = index - 1    
         return checkNumber(newIndex)
+        return newIndex
     })
   }
   const randomPerson=()=>{
@@ -61,10 +62,7 @@ const Review = () => {
     console.log(randomNumber);
   }
 
-  // add to favourites
-  const addFav = () => {
-    console.log("addfav");
-  }
+
   return <article className='review'>
         <div className="img-container">
           <img src={image} alt={name} className='person-img'/>
@@ -75,6 +73,10 @@ const Review = () => {
         <h4 className="author">{name}</h4>
         <p className="job">{job}</p>
         <p className="info">{text}</p>
+
+{/* icon is here */}
+        
+          
 
        <div className="btn-container">
        <button className="prev-btn" onClick={prevPerson} >
@@ -88,11 +90,11 @@ const Review = () => {
           suprise me
         </button>
 
-          <div className={ favIcon ? 'fav-icon' : ''} ><AiFillStar
-          style={{cursor:'pointer'}}
-            onClick={()=>setFavIcon( !favIcon)}
-          /></div>
-        
+          
+
+          <div className='remove-style'>
+            <button className='remove-btn'>not interested</button>
+          </div>
   </article>;
 };
 

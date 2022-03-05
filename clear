@@ -1,0 +1,29 @@
+[33mcommit f54d8b44a6ff82bd2a1bab4a7b852d2e953849cc[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: muhammad shakkeer <muhammadshakkeer3@gmail.com>
+Date:   Sat Mar 5 10:01:57 2022 +0530
+
+    added favourite icon
+
+[33mcommit 4898fd239b98e0461ccf15698e9d04641dc672b9[m
+Author: muhammad shakkeer <muhammadshakkeer3@gmail.com>
+Date:   Sat Mar 5 09:24:09 2022 +0530
+
+    error fixed in randomPerson function (const changed to let)
+
+[33mcommit 974ad75aec2c9df60aebc3f5f9784f5e3b068c54[m
+Author: muhammad shakkeer <muhammadshakkeer3@gmail.com>
+Date:   Fri Mar 4 18:03:17 2022 +0530
+
+    checkNumber changed some parameters
+
+[33mcommit 8d960bd2e310bd5bd88a9dc025320019e8a06fd0[m
+Author: muhammad shakkeer <muhammadshakkeer3@gmail.com>
+Date:   Thu Mar 3 14:22:15 2022 +0530
+
+    first commit
+
+[33mcommit feef59a6ac22382d5049af66d57f67b277de682a[m
+Author: muhammad shakkeer <muhammadshakkeer3@gmail.com>
+Date:   Thu Mar 3 14:18:01 2022 +0530
+
+    first commit
