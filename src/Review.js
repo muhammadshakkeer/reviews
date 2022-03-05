@@ -6,6 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 const Review = () => {
   const [favIcon,setFavIcon]= useState(false)
   const [index,setIndex] = useState(0)
+
   //below :- people [] ,not () beacuse -> {people is an array}
   const {id,name,job,image,text} = people[index]
     
@@ -38,7 +39,6 @@ const Review = () => {
     setIndex((index)=> {
         const newIndex = index - 1    
         return checkNumber(newIndex)
-        return newIndex
     })
   }
   const randomPerson=()=>{
@@ -62,6 +62,18 @@ const Review = () => {
     console.log(randomNumber);
   }
 
+  // remove review
+  const removeReview = (id) => {
+    // {people.filter((person) => {
+    //   let notRemovedReview = person.id !== id
+    //   console.log(notRemovedReview)
+    //   // setIndex(notRemovedReview)
+    // })}
+    const notRemovedReview = people.filter((person) => person.id !== id)
+    // setIndex(notRemovedReview)
+    console.log(people);
+    console.log(notRemovedReview);
+  }
 
   return <article className='review'>
         <div className="img-container">
@@ -93,7 +105,9 @@ const Review = () => {
           
 
           <div className='remove-style'>
-            <button className='remove-btn'>not interested</button>
+            <button className='remove-btn'
+              onClick={()=>removeReview(id)}
+            >remove it</button>
           </div>
   </article>;
 };
